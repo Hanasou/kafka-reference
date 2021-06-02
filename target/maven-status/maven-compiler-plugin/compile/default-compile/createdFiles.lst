@@ -1,0 +1,15 @@
+example/todo/ToDo$Builder.class
+example/todo/ToDo.class
+com/roy/avroexample/AvroProducer.class
+example/customer/Customer$1.class
+App.class
+example/customer/Customer.class
+example/customer/CustomerAddress$Builder.class
+example/avro/User.class
+example/avro/User$1.class
+example/customer/Customer$Builder.class
+example/customer/CustomerAddress$1.class
+com/roy/avroexample/AvroWriter.class
+example/customer/CustomerAddress.class
+example/todo/ToDo$1.class
+example/avro/User$Builder.class

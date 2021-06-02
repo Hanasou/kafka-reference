@@ -1,0 +1,23 @@
+{
+  "namespace": "example.todo",
+  "type": "record",
+  "name": "ToDo",
+  "fields": [
+    {
+      "name": "task",
+      "type": "string"
+    },
+    {
+      "name": "assignee",
+      "type": "string"
+    },
+    {
+      "name": "duration",
+      "type": "int"
+    },
+    {
+      "name": "creationTimestamp",
+      "type": "long"
+    }
+  ]
+}

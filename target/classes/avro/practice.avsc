@@ -1,0 +1,61 @@
+[
+  {
+    "type": "record",
+    "namespace": "example.customer",
+    "name": "CustomerAddress",
+    "fields": [
+      { "name": "address", "type": "string", "doc": "the address" },
+      { "name": "city", "type": "string", "doc": "the city the address is located in" },
+      { "name": "postal_code", "type": ["int", "string"], "doc": "the postal code. Can be number of string" }
+    ]
+  },
+  {
+    "name": "Customer",
+    "namespace": "example.customer",
+    "doc": "An example schema that represents a customer",
+    "type": "record",
+    "fields": [
+      {
+        "name": "first_name",
+        "type": "string"
+      },
+      {
+        "name": "last_name",
+        "type": "string"
+      },
+      {
+        "name": "age",
+        "type": "int"
+      },
+      {
+        "name": "height",
+        "doc": "in centimeters",
+        "type": "float"
+      },
+      {
+        "name": "weight",
+        "doc": "in kilograms",
+        "type": "float"
+      },
+      {
+        "name": "automated_email",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "customer_emails",
+        "type": {
+          "type": "array",
+          "items": "string"
+        },
+        "default": [],
+        "doc": "List of customer emails"
+      },
+      {
+        "name": "customer_address",
+        "type": "example.customer.CustomerAddress",
+        "doc": "The address of the customer"
+      }
+    ]
+  }
+]
