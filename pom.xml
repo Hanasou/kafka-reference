@@ -62,16 +62,8 @@
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>kafka-avro-serializer</artifactId>
-            <version>5.4.0</version>
+            <version>5.5.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.confluent/kafka-schema-registry -->
-        <dependency>
-            <groupId>io.confluent</groupId>
-            <artifactId>kafka-schema-registry</artifactId>
-            <version>5.4.0</version>
-        </dependency>
-
-
     </dependencies>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

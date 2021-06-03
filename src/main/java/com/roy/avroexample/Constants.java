@@ -1,6 +1,8 @@
 package com.roy.avroexample;
 
+import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
+import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 public final class Constants {
@@ -28,9 +30,13 @@ public final class Constants {
 
     // Serialization constants
     public static final String KEY_SERIALIZER_KEY = "key.serializer";
+    public static final String KEY_DESERIALIZER_KEY = "key.deserializer";
     public static final String KEY_SERIALIZER_VALUE = StringSerializer.class.getName();
+    public static final String KEY_DESERIALIZER_VALUE = StringDeserializer.class.getName();
     public static final String VALUE_SERIALIZER_KEY = "value.serializer";
+    public static final String VALUE_DESERIALIZER_KEY = "value.deserializer";
     public static final String VALUE_SERIALIZER_VALUE = KafkaAvroSerializer.class.getName();
+    public static final String VALUE_DESERIALIZER_VALUE = KafkaAvroDeserializer.class.getName();
 
     // Schema registry constants
     public static final String SCHEMA_REGISTRY_KEY= "schema.registry.url";

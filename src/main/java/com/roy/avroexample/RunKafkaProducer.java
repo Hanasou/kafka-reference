@@ -1,5 +1,4 @@
-import com.roy.avroexample.AvroConsumer;
-import com.roy.avroexample.AvroProducer;
+package com.roy.avroexample;
 
 import java.time.Instant;
 

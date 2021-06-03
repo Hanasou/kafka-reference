@@ -1,6 +1,4 @@
-import com.roy.avroexample.AvroConsumer;
-
-import java.time.Instant;
+package com.roy.avroexample;
 
 public class RunKafkaConsumer {
     public static void main(String[] args) {

@@ -38,15 +38,12 @@ public class AvroProducer {
         ProducerRecord<String, ToDo> record = new ProducerRecord<String, ToDo>(Constants.TODO_TOPIC, todo);
 
         // send message
-        producer.send(record, new Callback() {
-            @Override
-            public void onCompletion(RecordMetadata recordMetadata, Exception e) {
-                if (e == null) {
-                    System.out.println("Message Sent");
-                    System.out.println(recordMetadata.toString());
-                } else {
-                    e.printStackTrace();
-                }
+        producer.send(record, (recordMetadata, e) -> {
+            if (e == null) {
+                System.out.println("Message Sent");
+                System.out.println(recordMetadata.toString());
+            } else {
+                e.printStackTrace();
             }
         });
     }
