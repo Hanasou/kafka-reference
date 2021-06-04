@@ -11,5 +11,6 @@ public class RunKafkaConsumer {
         } finally {
             consumer.closeConsumer();
         }
+        Runtime.getRuntime().addShutdownHook(new Thread(consumer::closeConsumer));
     }
 }

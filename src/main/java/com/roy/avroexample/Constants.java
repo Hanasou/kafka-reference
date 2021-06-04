@@ -44,4 +44,9 @@ public final class Constants {
 
     // Kafka topics
     public static final String TODO_TOPIC= "todo-topic";
+
+    // Streams config
+    public static final String STREAMS_APP_ID = "word-count";
+    public static final String STREAMS_INPUT_TOPIC = "word-count-input";
+    public static final String STREAMS_OUTPUT_TOPIC = "word-count-output";
 }
