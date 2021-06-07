@@ -39,11 +39,13 @@ public final class Constants {
     public static final String VALUE_DESERIALIZER_VALUE = KafkaAvroDeserializer.class.getName();
 
     // Schema registry constants
-    public static final String SCHEMA_REGISTRY_KEY= "schema.registry.url";
+    public static final String SCHEMA_REGISTRY_KEY = "schema.registry.url";
     public static final String SCHEMA_REGISTRY_HOST = "http://127.0.0.1:8081";
 
     // Kafka topics
-    public static final String TODO_TOPIC= "todo-topic";
+    public static final String TODO_TOPIC = "todo-topic";
+    public static final String COLOR_INPUT_TOPIC = "color-input";
+    public static final String COLOR_OUTPUT_TOPIC = "color-output";
 
     // Streams config
     public static final String STREAMS_APP_ID = "word-count";

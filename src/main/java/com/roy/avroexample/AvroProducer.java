@@ -9,7 +9,7 @@ import org.apache.kafka.clients.producer.RecordMetadata;
 import java.util.Properties;
 
 public class AvroProducer {
-    private KafkaProducer<String, ToDo> producer;
+    private final KafkaProducer<String, ToDo> producer;
 
     public AvroProducer() {
         this.producer = this.createProducer();
@@ -28,8 +28,7 @@ public class AvroProducer {
         props.setProperty(Constants.SCHEMA_REGISTRY_KEY, Constants.SCHEMA_REGISTRY_HOST);
 
         // Initialize KafkaProducer
-        KafkaProducer<String, ToDo> producer = new KafkaProducer<String, ToDo>(props);
-        return producer;
+        return new KafkaProducer<String, ToDo>(props);
     }
 
     public void produceMessage(String task, String assignee, int duration, long timestamp) {
