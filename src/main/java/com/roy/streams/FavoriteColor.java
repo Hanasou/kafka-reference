@@ -50,4 +50,8 @@ public class FavoriteColor {
        // shutdown hook
        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
    }
+
+    public static void main(String[] args) {
+        startFavoriteColor();
+    }
 }

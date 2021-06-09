@@ -1,0 +1,19 @@
+{
+  "namespace": "example.bank",
+  "type": "record",
+  "name": "Deposit",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "amount",
+      "type": "int"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

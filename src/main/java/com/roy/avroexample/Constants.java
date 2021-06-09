@@ -44,6 +44,8 @@ public final class Constants {
 
     // Kafka topics
     public static final String TODO_TOPIC = "todo-topic";
+    public static final String BANK_INPUT_TOPIC = "bank-input";
+    public static final String BANK_OUTPUT_TOPIC = "bank-output";
     public static final String COLOR_INPUT_TOPIC = "color-input";
     public static final String COLOR_OUTPUT_TOPIC = "color-output";
 
