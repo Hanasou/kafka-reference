@@ -17,7 +17,7 @@ public class BankStreams {
 
     public static void startStream() {
         Properties props = new Properties();
-        props.put(StreamsConfig.APPLICATION_ID_CONFIG, Constants.STREAMS_APP_ID);
+        props.put(StreamsConfig.APPLICATION_ID_CONFIG, Constants.BANK_APP_ID);
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.KAFKA_HOST);
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, Constants.AUTO_OFFSET_RESET_VALUE);
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());

@@ -22,8 +22,8 @@ public class AvroProducer {
         props.setProperty(Constants.ACKS_KEY, Constants.ACKS_VAL);
         props.setProperty(Constants.RETRIES_KEY, Constants.RETRIES_VALUE);
 
-        props.setProperty(Constants.KEY_SERIALIZER_KEY, Constants.KEY_SERIALIZER_VALUE);
-        props.setProperty(Constants.VALUE_SERIALIZER_KEY, Constants.VALUE_SERIALIZER_VALUE);
+        props.setProperty(Constants.KEY_SERIALIZER_KEY, Constants.STRING_SERIALIZER);
+        props.setProperty(Constants.VALUE_SERIALIZER_KEY, Constants.AVRO_SERIALIZER);
 
         props.setProperty(Constants.SCHEMA_REGISTRY_KEY, Constants.SCHEMA_REGISTRY_HOST);
 

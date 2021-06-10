@@ -3,6 +3,8 @@ package com.roy.streams;
 import com.roy.avroexample.Constants;
 import example.bank.Deposit;
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.time.Instant;
@@ -36,12 +38,14 @@ public class BankProducer {
     public KafkaProducer<String, Deposit> createProducer() {
         Properties props = new Properties();
         // These are some boilerplate properties
-        props.setProperty(Constants.BOOTSTRAP_SERVERS, Constants.KAFKA_HOST);
-        props.setProperty(Constants.ACKS_KEY, Constants.ACKS_VAL);
-        props.setProperty(Constants.RETRIES_KEY, Constants.RETRIES_VALUE);
+        props.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.KAFKA_HOST);
+        props.setProperty(ProducerConfig.ACKS_CONFIG, Constants.ACKS_VAL);
+        props.setProperty(ProducerConfig.RETRIES_CONFIG, Constants.RETRIES_VALUE);
+        props.setProperty(ProducerConfig.LINGER_MS_CONFIG, Constants.LINGER_MS_VALUE);
+        props.setProperty(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, Constants.ENABLE_IDEMPOTENCE_VALUE);
 
-        props.setProperty(Constants.KEY_SERIALIZER_KEY, Constants.KEY_SERIALIZER_VALUE);
-        props.setProperty(Constants.VALUE_SERIALIZER_KEY, Constants.VALUE_SERIALIZER_VALUE);
+        props.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, Constants.STRING_SERIALIZER);
+        props.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, Constants.AVRO_SERIALIZER);
 
         props.setProperty(Constants.SCHEMA_REGISTRY_KEY, Constants.SCHEMA_REGISTRY_HOST);
         return new KafkaProducer<String, Deposit>(props);

@@ -25,8 +25,8 @@ public class AvroConsumer {
         props.setProperty(Constants.ENABLE_AUTO_COMMIT_KEY, Constants.ENABLE_AUTO_COMMIT_VALUE);
         props.setProperty(Constants.AUTO_OFFSET_RESET_KEY, Constants.AUTO_OFFSET_RESET_VALUE);
 
-        props.setProperty(Constants.KEY_DESERIALIZER_KEY, Constants.KEY_DESERIALIZER_VALUE);
-        props.setProperty(Constants.VALUE_DESERIALIZER_KEY, Constants.VALUE_DESERIALIZER_VALUE);
+        props.setProperty(Constants.KEY_DESERIALIZER_KEY, Constants.STRING_DESERIALIZER);
+        props.setProperty(Constants.VALUE_DESERIALIZER_KEY, Constants.AVRO_DESERIALIZER);
 
         props.setProperty(Constants.SCHEMA_REGISTRY_KEY, Constants.SCHEMA_REGISTRY_HOST);
         // Indicate that we want to read specific Avro records

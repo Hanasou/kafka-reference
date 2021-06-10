@@ -17,6 +17,8 @@ public final class Constants {
     public static final String ACKS_VAL = "1";
     public static final String RETRIES_KEY = "retries";
     public static final String RETRIES_VALUE = "10";
+    public static final String LINGER_MS_VALUE = "1";
+    public static final String ENABLE_IDEMPOTENCE_VALUE = "true";
 
     // Consumer constants
     public static final String GROUP_ID_KEY = "group.id";
@@ -31,12 +33,12 @@ public final class Constants {
     // Serialization constants
     public static final String KEY_SERIALIZER_KEY = "key.serializer";
     public static final String KEY_DESERIALIZER_KEY = "key.deserializer";
-    public static final String KEY_SERIALIZER_VALUE = StringSerializer.class.getName();
-    public static final String KEY_DESERIALIZER_VALUE = StringDeserializer.class.getName();
+    public static final String STRING_SERIALIZER = StringSerializer.class.getName();
+    public static final String STRING_DESERIALIZER = StringDeserializer.class.getName();
     public static final String VALUE_SERIALIZER_KEY = "value.serializer";
     public static final String VALUE_DESERIALIZER_KEY = "value.deserializer";
-    public static final String VALUE_SERIALIZER_VALUE = KafkaAvroSerializer.class.getName();
-    public static final String VALUE_DESERIALIZER_VALUE = KafkaAvroDeserializer.class.getName();
+    public static final String AVRO_SERIALIZER = KafkaAvroSerializer.class.getName();
+    public static final String AVRO_DESERIALIZER = KafkaAvroDeserializer.class.getName();
 
     // Schema registry constants
     public static final String SCHEMA_REGISTRY_KEY = "schema.registry.url";
@@ -50,7 +52,8 @@ public final class Constants {
     public static final String COLOR_OUTPUT_TOPIC = "color-output";
 
     // Streams config
-    public static final String STREAMS_APP_ID = "word-count";
+    public static final String STREAMS_APP_ID = "word-count-application";
+    public static final String BANK_APP_ID = "bank-application";
     public static final String STREAMS_INPUT_TOPIC = "word-count-input";
     public static final String STREAMS_OUTPUT_TOPIC = "word-count-output";
 }
