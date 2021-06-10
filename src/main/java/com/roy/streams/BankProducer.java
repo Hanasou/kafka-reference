@@ -53,7 +53,7 @@ public class BankProducer {
 
     public void sendMessage(String name, int balance, long timestamp) {
        Deposit deposit = new Deposit(name, balance, timestamp);
-       ProducerRecord<String, Deposit> record = new ProducerRecord<>(Constants.BANK_INPUT_TOPIC, deposit);
+       ProducerRecord<String, Deposit> record = new ProducerRecord<>(Constants.BANK_INPUT_TOPIC, deposit.getFirstName(), deposit);
 
        // send message
        producer.send(record, (recordMetadata, e) -> {

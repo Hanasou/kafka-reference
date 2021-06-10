@@ -20,6 +20,8 @@ public class BankStreams {
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, Constants.BANK_APP_ID);
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.KAFKA_HOST);
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, Constants.AUTO_OFFSET_RESET_VALUE);
+        // Set this to exactly once processing
+        props.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE);
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
         // Add schema registry url here too
@@ -28,8 +30,7 @@ public class BankStreams {
         StreamsBuilder builder = new StreamsBuilder();
 
         KStream<String, Deposit> input = builder.stream(Constants.BANK_INPUT_TOPIC);
-        KTable<String, Deposit> balances = input.selectKey((key, deposit) -> deposit.getFirstName()) // change key to persons' first name
-                .groupByKey()
+        KTable<String, Deposit> balances = input.groupByKey()
                 .reduce((aggValue, newValue) -> {
                     int newAmount = aggValue.getAmount() + newValue.getAmount();
                     return new Deposit(aggValue.getFirstName(), newAmount, newValue.getTimestamp());
